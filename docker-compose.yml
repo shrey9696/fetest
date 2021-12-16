@@ -2,7 +2,7 @@ version: '3.3'
 
 services:  
   cs_be:
-          image: backend:v1
+    image: backend:v1
     container_name: backend
     volumes:
       - /etc/localtime:/etc/localtime:ro
