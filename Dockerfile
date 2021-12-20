@@ -1,9 +1,11 @@
-FROM openjdk:8-jre-alpine
 
-COPY target/angular-maven-0.0.1-SNAPSHOT.jar /opt/angular-maven-0.0.1-SNAPSHOT.jar
+FROM localhost:5000/nodeimage1
+WORKDIR /usr/src/app
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
 
-RUN md5sum /opt/angular-maven-0.0.1-SNAPSHOT.jar
+COPY . .
+EXPOSE 4200
 
-
-
-ENTRYPOINT java  -jar   /opt/angular-maven-0.0.1-SNAPSHOT.jar
+CMD /usr/src/app/node_modules/.bin/ng serve --host 0.0.0.0 --disableHostCheck
