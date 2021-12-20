@@ -3,7 +3,7 @@ version: '3.3'
 services:
   cs_be:
     build: .
-    container_name: backendcompose
+    container_name: backendcompose1
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -12,7 +12,7 @@ services:
 
   cs_fe:
     build: .
-    container_name: frontendcompose
+    container_name: frontendcompose1
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
