@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   cs_be:
-    build: dsyer/spring-boot-angular
+    build: .
     container_name: backendcompose
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -11,7 +11,7 @@ services:
     restart: always
 
   cs_fe:
-    build: fe/dsyer/last/dsyer
+    build: .
     container_name: frontendcompose
     volumes:
       - /etc/localtime:/etc/localtime:ro
